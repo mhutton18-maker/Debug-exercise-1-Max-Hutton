@@ -1,0 +1,52 @@
+start
+Declarations
+string name
+string EOFNAME = "ZZZZ"
+
+housekeeping(name, EOFNAME)
+
+while name <> EOFNAME
+    mainLoop(name, EOFNAME)
+endwhile
+
+finish()
+stop
+
+
+housekeeping(name, EOFNAME)
+    output "Enter first name or ", EOFNAME, " to quit "
+    input name
+return
+
+
+mainLoop(name, EOFNAME)
+Declarations
+    num hours
+    num rate
+    num DEDUCTION = 45
+    num gross
+    num net
+
+    output "Enter hours worked for ", name
+    input hours
+
+    output "Enter hourly rate for ", name
+    input rate
+
+    gross = hours * rate
+    net = gross - DEDUCTION
+
+    if net > 0 then
+        output "Net pay for ", name, " is ", net
+    else
+        output "Deductions not covered. Net is 0."
+    endif
+
+    output "Enter next name or ", EOFNAME, " to quit "
+    input name
+return
+
+
+finish()
+    output "End of job"
+return
